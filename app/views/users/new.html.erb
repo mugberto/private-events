@@ -1,0 +1,11 @@
+
+<%= form_with model: @user do |form| %>
+  
+  <fieldset class="sign-up-form">
+    <legend>Sign up</legend>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %><br><br>
+    <%= form.submit %>
+  </fieldset>
+  
+<% end %>
