@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   root to: 'user_sessions#new'
   resources :users, only: [:new, :create, :show]
   resources :user_sessions, only: [:new, :create, :destroy]
-  resources :events, only: [:show, :new, :create]
+  resources :events, only: [:index, :show, :new, :create]
 end
