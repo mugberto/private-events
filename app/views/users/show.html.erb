@@ -2,7 +2,7 @@
 
 <ul>
   <% @events.each do |event| %>
-    <li><%= event.name %></li>
+    <li><%= link_to event.name, event %></li>
   <% end %>
 </ul>
 
@@ -10,7 +10,7 @@
 
 <ul>
   <% current_user.attended_events.where('date < ?', DateTime.now).each do |event| %>
-    <li><%= event.name %> / <%= event.date%> /<%= DateTime.now %></li>
+    <li><%= link_to event.name, event %> / <%= event.date%> /<%= DateTime.now %></li>
   <% end %>
 </ul>
 
@@ -18,6 +18,6 @@
 
 <ul>
   <% current_user.attended_events.where('date > ?', DateTime.now).each do |event| %>
-    <li><%= event.name %> / <%= event.date%> /<%= DateTime.now %></li>
+    <li><%= link_to event.name, event %> / <%= event.date%> /<%= DateTime.now %></li>
   <% end %>
 </ul>
