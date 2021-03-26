@@ -1,7 +1,17 @@
 <h1>Events</h1>
 
+<h2>Past Events</h2>
+
 <ul>
-<% @events.each do |event| %>
+<% @events.past.each do |event| %>
+<li><%= event.name %> / <%= event.date %> </li>
+<% end %>
+</ul>
+
+<h2>Upcoming Events</h2>
+
+<ul>
+<% @events.upcoming.each do |event| %>
 <li><%= event.name %> / <%= event.date %> </li>
 <% end %>
 </ul>
