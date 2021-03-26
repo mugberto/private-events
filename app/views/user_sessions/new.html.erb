@@ -1,0 +1,11 @@
+<%= form_with url: '/user_sessions', method: :post, local: true do |form| %>
+  
+  <fieldset class="sign-up-form">
+   
+    <legend>Sign in</legend>
+    <%= form.label :user_username, 'Username:' %><br>
+    <%= form.text_field :username %><br><br>  
+    <%= form.submit 'Sign in' %>
+  </fieldset>
+  
+<% end %>
