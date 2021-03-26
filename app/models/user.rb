@@ -4,4 +4,6 @@ class User < ApplicationRecord
   def self.authenticate(username)
     find_by(username: username)
   end
+
+  has_many :events
 end
