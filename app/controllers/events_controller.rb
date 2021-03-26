@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+  def show
+    @event = Event.find(1)
+  end
+
   def new
     @event = Event.new
     if session[:user_id]
