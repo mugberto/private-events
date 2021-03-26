@@ -6,4 +6,5 @@ class User < ApplicationRecord
   end
 
   has_many :events
+  has_many :attended_events, source: 'Event', through: :attendances
 end
