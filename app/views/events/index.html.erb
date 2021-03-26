@@ -4,7 +4,7 @@
 
 <ul>
 <% @events.past.each do |event| %>
-<li><%= event.name %> / <%= event.date %> </li>
+<li><%= link_to  event.name, event %> / <%= event.date %></li>
 <% end %>
 </ul>
 
@@ -12,6 +12,6 @@
 
 <ul>
 <% @events.upcoming.each do |event| %>
-<li><%= event.name %> / <%= event.date %> </li>
+<li><%= link_to  event.name, event %> / <%= event.date %> </li>
 <% end %>
 </ul>
