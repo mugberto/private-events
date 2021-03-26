@@ -22,3 +22,11 @@
     <td><%= @event.user.username %></td>
   </tr>
 </table>
+
+<h2>Attendees</h2>
+
+<ul>
+  <% @event.attendees.each do |attendee| %>
+    <li><%= attendee.username %></li>
+  <% end %>
+</ul>

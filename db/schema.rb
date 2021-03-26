@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_26_130837) do
+ActiveRecord::Schema.define(version: 2021_03_26_144644) do
 
   create_table "attendances", force: :cascade do |t|
-    t.integer "attendee_id", null: false
     t.integer "event_id", null: false
-    t.index ["attendee_id"], name: "index_attendances_on_attendee_id"
+    t.integer "attendee_id"
     t.index ["event_id"], name: "index_attendances_on_event_id"
   end
 
@@ -37,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_03_26_130837) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "attendances", "attendees"
   add_foreign_key "attendances", "events"
+  add_foreign_key "attendances", "users", column: "attendee_id"
   add_foreign_key "events", "users"
 end
