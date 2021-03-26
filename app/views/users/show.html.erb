@@ -6,3 +6,10 @@
 <% end %>
 </ul>
 
+<h2>Events you are attending</h2>
+
+<ul>
+<% current_user.attended_events.each do |event| %>
+  <li><%= event.name %></li>
+<% end %>
+</ul>
