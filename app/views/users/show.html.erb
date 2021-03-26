@@ -1,15 +1,23 @@
 <h1>Events by <%= @user.username %> </h1>
 
 <ul>
-<% @events.each do |event| %>
-  <li><%= event.name %></li>
-<% end %>
+  <% @events.each do |event| %>
+    <li><%= event.name %></li>
+  <% end %>
 </ul>
 
-<h2>Events you are attending</h2>
+<h2>Previous Events</h2>
 
 <ul>
-<% current_user.attended_events.each do |event| %>
-  <li><%= event.name %></li>
-<% end %>
+  <% current_user.attended_events.where('date < ?', DateTime.now).each do |event| %>
+    <li><%= event.name %> / <%= event.date%> /<%= DateTime.now %></li>
+  <% end %>
+</ul>
+
+<h2>Upcoming Events</h2>
+
+<ul>
+  <% current_user.attended_events.where('date > ?', DateTime.now).each do |event| %>
+    <li><%= event.name %> / <%= event.date%> /<%= DateTime.now %></li>
+  <% end %>
 </ul>
