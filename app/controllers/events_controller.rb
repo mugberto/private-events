@@ -17,8 +17,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.user_id = session[:user_id]
+    @user = User.find(session[:user_id])
+    @event = @user.events.build(event_params)
     if @event.save
       redirect_to root_path, notice: 'Event created successively'
     else
