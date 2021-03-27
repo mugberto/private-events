@@ -5,7 +5,7 @@ class UserSessionsController < ApplicationController
     user = User.authenticate(params[:username])
     if user
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'Logged in'
+      redirect_to root_path
     else
       flash.now.alert = 'Invalid username'
       render :new
