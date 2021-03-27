@@ -10,8 +10,7 @@ class AttendancesController < ApplicationController
     if @invitation.save
       redirect_to root_path, notice: 'User invitated'
     else
-      flash.now.alert('Invitation failed')
-      render :new
+      redirect_to new_attendance_path, alert: 'Invatation failed'
     end
   end
 

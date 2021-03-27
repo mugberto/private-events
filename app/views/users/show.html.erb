@@ -6,7 +6,9 @@
   <% end %>
 </ul>
 
-<h2>Previous Events</h2>
+<h2>Event to attend</h2>
+
+<h3>Previous Events</h3>
 
 <ul>
   <% current_user.attended_events.where('date < ?', DateTime.now).each do |event| %>
@@ -14,7 +16,7 @@
   <% end %>
 </ul>
 
-<h2>Upcoming Events</h2>
+<h3>Upcoming Events</h3>
 
 <ul>
   <% current_user.attended_events.where('date > ?', DateTime.now).each do |event| %>
