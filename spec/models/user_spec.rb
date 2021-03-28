@@ -16,4 +16,10 @@ RSpec.describe User, type: :model do
       expect(User.new(username: 'this_username')).to be_valid
     end
   end
+
+  context 'Associations' do
+    it { should have_many(:events) }
+    it { should have_many(:attendances) }
+    it { should have_many(:attended_events) }
+  end
 end
