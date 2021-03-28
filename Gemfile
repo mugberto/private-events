@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  # Strategies for cleaning databases to ensure a clean slate for testing.
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
   # install rspec rails
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
