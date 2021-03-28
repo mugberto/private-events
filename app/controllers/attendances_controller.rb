@@ -8,7 +8,7 @@ class AttendancesController < ApplicationController
   def create
     @invitation = Attendance.new(attendance_params)
     if @invitation.save
-      redirect_to root_path, notice: 'User invitated'
+      redirect_to root_path, notice: 'User invited'
     else
       redirect_to new_attendance_path, alert: 'Invatation failed'
     end
