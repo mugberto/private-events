@@ -12,7 +12,7 @@
 
 <ul>
   <% current_user.attended_events.where('date < ?', DateTime.now).each do |event| %>
-    <li><%= link_to event.name, event %> / <%= event.date%> /<%= DateTime.now %></li>
+    <li><%= link_to event.name, event %> / <%= event.date%> </li>
   <% end %>
 </ul>
 
@@ -20,6 +20,6 @@
 
 <ul>
   <% current_user.attended_events.where('date > ?', DateTime.now).each do |event| %>
-    <li><%= link_to event.name, event %> / <%= event.date%> /<%= DateTime.now %></li>
+    <li><%= link_to event.name, event %> / <%= event.date%> </li>
   <% end %>
 </ul>
