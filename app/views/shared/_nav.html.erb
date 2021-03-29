@@ -1,0 +1,7 @@
+<div>
+  Logged in as <%= link_to current_user.username, current_user %> |
+  <%= link_to "All Events", events_path %> |
+  <%= link_to "Create Event", new_event_path %> | 
+  <%= link_to "Invite a user", new_attendance_path %> | 
+  <%= link_to "log out", user_session_path(current_user.id), method: :delete %>
+</div>
