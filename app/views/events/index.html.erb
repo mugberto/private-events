@@ -3,15 +3,12 @@
 <h2>Past Events</h2>
 
 <ul>
-<% @events.past.each do |event| %>
-<li><%= link_to  event.name, event %> / <%= event.date %></li>
-<% end %>
+<%= render partial: 'event', collection: @past_events %>
+
 </ul>
 
 <h2>Upcoming Events</h2>
 
 <ul>
-<% @events.upcoming.each do |event| %>
-<li><%= link_to  event.name, event %> / <%= event.date %> </li>
-<% end %>
+<%= render partial: 'event', collection: @upcoming_events %>
 </ul>
