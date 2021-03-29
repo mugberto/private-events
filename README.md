@@ -22,9 +22,16 @@ To get this app ready to run, follow this steps:
 
         pc:~$ bundle install
 
+* Create a database
+        pc:~$ rails db:create
+
 * Run database migration
 
         pc:~$ rails db:migrate
+
+* If you don't have webpack install, run:
+
+        pc:~$ rails webpacker:install
 
 * Start the server
 
