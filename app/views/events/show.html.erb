@@ -23,12 +23,6 @@
   </tr>
 </table>
 
-<h2>Attendees</h2>
-
-<ul>
-  <% @event.attendees.each do |attendee| %>
-    <li><%= attendee.username %></li>
-  <% end %>
-</ul>
+<%= attendees %>
 
 <%= link_to "<< All events", events_path %>
