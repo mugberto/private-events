@@ -28,7 +28,7 @@ RSpec.describe 'Event management', type: :feature do
   context 'Inviting users' do
     before do
       @event = Event.create(name: 'Event_name', description: 'Event_description', \
-                            date: DateTime.now, venue: 'Event_venue', user_id: 1)
+                            date: DateTime.now, venue: 'Event_venue', creator_id: 1)
     end
 
     it 'should invite a user' do
