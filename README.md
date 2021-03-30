@@ -16,7 +16,7 @@ To get this app ready to run, follow this steps:
 
 * clone this repo
 
-        pc:~$ git clone git@github.com:mugberto/blogger.git
+        pc:~$ git clone git@github.com:mugberto/private-events.git
 
 * install required gems
 
