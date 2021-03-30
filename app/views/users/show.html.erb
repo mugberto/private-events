@@ -1,9 +1,7 @@
 <h1>Events by <%= current_user.username %> </h1>
 
 <ul>
-  <% @events.each do |event| %>
-    <li><%= link_to event.name, event %></li>
-  <% end %>
+ <%= render partial: 'user_event', collection: current_user.events %>  
 </ul>
 
 <h2>Event to attend</h2>
@@ -11,15 +9,11 @@
 <h3>Previous Events</h3>
 
 <ul>
-  <% current_user.attended_events.where('date < ?', DateTime.now).each do |event| %>
-    <li><%= link_to event.name, event %> / <%= event.date%> </li>
-  <% end %>
+ <%= render partial: 'events/event', collection: @previous_events %> 
 </ul>
 
 <h3>Upcoming Events</h3>
 
 <ul>
-  <% current_user.attended_events.where('date > ?', DateTime.now).each do |event| %>
-    <li><%= link_to event.name, event %> / <%= event.date%> </li>
-  <% end %>
+ <%= render partial: 'events/event', collection: @upcoming_events %> 
 </ul>
