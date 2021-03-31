@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'user_sessions/new', to: 'user_sessions#new', as: 'log_in'
+  get 'user_sessions/create', to: 'user_sessions#create'
+  get 'user_sessions/destroy', to: 'user_sessions#destroy'
+  root to: 'events#index'
+  resources :users, only: [:new, :create, :show]
+  resources :user_sessions, only: [:new, :create, :destroy]
+  resources :events, only: [:index, :show, :new, :create]
+  resources :attendances, only: [:new, :create]
 end

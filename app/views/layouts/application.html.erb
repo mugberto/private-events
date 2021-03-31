@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <%= nav %>
+    <%= login_menu %>
+    <% flash.each do |name, message| %>
+      <div><%= message %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

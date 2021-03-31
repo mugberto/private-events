@@ -1,0 +1,19 @@
+
+<%= form_with model: @user, local: true do |form| %>
+  
+  <fieldset class="sign-up-form">
+   
+    <legend>Sign up</legend>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %><br>
+
+    <ul>
+      <% @user.errors.full_messages_for(:username).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+      
+    <%= form.submit %>
+  </fieldset>
+  
+<% end %>

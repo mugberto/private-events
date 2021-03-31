@@ -1,0 +1,19 @@
+<h1>Events by <%= current_user.username %> </h1>
+
+<ul>
+ <%= render partial: 'user_event', collection: current_user.events %>  
+</ul>
+
+<h2>Event to attend</h2>
+
+<h3>Previous Events</h3>
+
+<ul>
+ <%= render partial: 'events/event', collection: @previous_events %> 
+</ul>
+
+<h3>Upcoming Events</h3>
+
+<ul>
+ <%= render partial: 'events/event', collection: @upcoming_events %> 
+</ul>

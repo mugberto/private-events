@@ -1,0 +1,39 @@
+
+<%= form_with model: @event, local: true do |form| %>
+  
+  <fieldset class="sign-up-form">
+   
+    <legend>Create Event</legend>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+    <ul>
+      <% @event.errors.full_messages_for(:name).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <%= form.label :description %><br>
+    <%= form.text_area :description, size: '30x3' %><br>
+    <ul>
+      <% @event.errors.full_messages_for(:description).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <%= form.label :date %><br>
+    <%= form.datetime_local_field :date %><br>
+    <ul>
+      <% @event.errors.full_messages_for(:date).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <%= form.label :venue %><br>
+    <%= form.text_field :venue %><br>
+    <ul>
+      <% @event.errors.full_messages_for(:venue).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+      
+    <%= form.submit %>
+  </fieldset>
+  
+<% end %>

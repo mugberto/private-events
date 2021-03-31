@@ -1,0 +1,27 @@
+<%= form_with model: @invitation, local: true do |form| %>
+  
+  <fieldset class="sign-up-form">
+   
+    <legend>Invite a user</legend>
+    <%= form.label :attendee_id, 'Select a user' %><br>
+    <%= form.select :attendee_id,  collection: @users.map { |user| [user.username, user.id]}.unshift(['------', nil]) %><br>
+
+    <ul>
+      <% @invitation.errors.full_messages_for(:attendee_id).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+
+    <%= form.label :event_id, 'Select an event' %><br>
+    <%= form.select :event_id, collection: @events.map { |event| [event.name, event.id]}.unshift(['------', nil])  %><br>
+
+    <ul>
+      <% @invitation.errors.full_messages_for(:attendee_id).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+      
+    <%= form.submit 'Invite'%>
+  </fieldset>
+  
+<% end %>

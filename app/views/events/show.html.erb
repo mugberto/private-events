@@ -1,0 +1,30 @@
+<h1>Event details</h1>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td><%= @event.name %></td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td><%= @event.description %></td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td><%= @event.date %></td>
+  </tr>
+  <tr>
+    <td>Venue</td>
+    <td><%= @event.venue %></td>
+  </tr>
+  <tr>
+    <td>Created by</td>
+    <td><%= @event.creator.username %></td>
+  </tr>
+</table>
+
+<%= attendees %>
+
+<%= attend_event_button %>
+<br>
+<%= link_to "<< All events", events_path %>
